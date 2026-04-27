@@ -22,8 +22,6 @@ COPY app ./app
 RUN mkdir -p /models
 VOLUME ["/models"]
 
-EXPOSE 8000
-
 HEALTHCHECK --interval=30s --timeout=5s --start-period=60s --retries=3 \
     CMD python -c "import urllib.request; urllib.request.urlopen('http://localhost:8000/health').read()" || exit 1
 

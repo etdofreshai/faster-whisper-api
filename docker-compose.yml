@@ -1,8 +1,6 @@
 services:
   faster-whisper-api:
     build: .
-    ports:
-      - "8000:8000"
     environment:
       WHISPER_MODEL: ${WHISPER_MODEL:-base}
       WHISPER_DEVICE: ${WHISPER_DEVICE:-cpu}
